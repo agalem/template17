@@ -1,0 +1,146 @@
+/* ------------------ VARIABLES ------------------ */
+
+/* COLORS */
+$white: rgb(255,255,255);
+$color_menu-slide: rgb(255,245,129);
+
+
+/* FONTS */
+$menu-font-family: 'Fjalla One', sans-serif;
+
+
+/* ------------------ MIXINS ------------------ */
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin center_flex {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin background-center($url) {
+  background: url($url) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin transparent {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+@mixin menu_transition {
+  transition: all 0.5s;
+  -moz-transition: all 0.5s; /* Firefox 4 */
+  -webkit-transition: all 0.5s; /* Safari and Chrome */
+  -o-transition: all 0.5s; /* Opera */
+}
+
+/* ------------------ PROPER CONTENT ------------------ */
+
+body {
+  background-color: red;
+  margin: 0;
+}
+
+.body-content-wrap {
+  background-color: black;
+  height: 100%;
+  width: 100vw;
+  max-width: 1440px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-content-wrap {
+  //background-color: yellow;
+  height: 100%;
+  width: 1000px;
+}
+
+.header {
+  background-color: $white;
+  width: 100%;
+  height: 75px;
+  @include flexbox;
+  @include center_flex;
+  .section-content-wrap {
+    @include flexbox;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.site-logo {
+  width: 60px;
+  height: auto;
+  position: relative;
+  left: 38px;
+  bottom: 3px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.menu-nav {
+  width: 725px;
+}
+
+.menu-list {
+  @include flexbox;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-list li {
+  list-style: none;
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 30px;
+    background-color: $color_menu-slide;
+    position: absolute;
+    left: -1500px;
+    top: 4px;
+    @include menu_transition;
+  }
+}
+
+.menu-list li:first-child {
+  margin-left: -40px;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: rgb(0,0,0);
+  font-family: $menu-font-family;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  position: relative;
+}
+
+@for $i from 1 through 7 {
+  .menu-list li:nth-of-type(#{$i}):hover {
+    &:before {
+      left: -2px;
+    }
+  }
+}
+
