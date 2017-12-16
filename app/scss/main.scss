@@ -3,10 +3,12 @@
 /* COLORS */
 $white: rgb(255,255,255);
 $color_menu-slide: rgb(255,245,129);
+$red: rgb(237, 32, 36);
 
 
 /* FONTS */
 $menu-font-family: 'Fjalla One', sans-serif;
+$handwriting-font-family: 'Norican', cursive;
 
 
 /* ------------------ MIXINS ------------------ */
@@ -47,7 +49,7 @@ $menu-font-family: 'Fjalla One', sans-serif;
 /* ------------------ PROPER CONTENT ------------------ */
 
 body {
-  background-color: red;
+  background-color: $white;
   margin: 0;
 }
 
@@ -66,7 +68,7 @@ body {
 .section-content-wrap {
   //background-color: yellow;
   height: 100%;
-  width: 1000px;
+  width: 75%;
 }
 
 .header {
@@ -75,12 +77,14 @@ body {
   height: 75px;
   @include flexbox;
   @include center_flex;
+  position: relative;
   .section-content-wrap {
     @include flexbox;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
   }
+  z-index: 10;
 }
 
 .site-logo {
@@ -96,7 +100,7 @@ body {
 }
 
 .menu-nav {
-  width: 725px;
+  width: 75%;
 }
 
 .menu-list {
@@ -129,7 +133,7 @@ body {
   text-decoration: none;
   color: rgb(0,0,0);
   font-family: $menu-font-family;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 14px;
@@ -142,5 +146,115 @@ body {
       left: -2px;
     }
   }
+}
+
+.cover-slider {
+  background-color: indianred;
+  width: 100%;
+  height: 705px;
+  margin-top: -75px;
+  position: relative;
+  z-index: 1;
+  @include flexbox;
+  @include center_flex;
+  .section-content-wrap {
+    //background-color: yellow;
+    @include flexbox;
+    @include center_flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.main-title {
+  font-family: $handwriting-font-family;
+  font-size: 90px;
+  font-style: italic;
+  color: $red;
+  text-shadow: 0px 7px 3px $white, -7px 0 3px $white, 0 -7px 3px $white, 7px 0 3px $white;
+  position: relative;
+  top: -20px;
+}
+
+.welcome {
+  font-family: $menu-font-family;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 22px;
+  color: $white;
+  font-weight: normal;
+  position: relative;
+  top: -85px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-color: darkseagreen;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.slide1 {
+  @include background-center("../images/slide1.png");
+  background-position: top;
+}
+
+.slide2 {
+  background-color: darkseagreen;
+}
+
+.slide3 {
+  background-color: #ed2024;
+}
+
+.arrow {
+  border: solid rgba(255,255,255,.8);
+  border-width: 0 5px 5px 0;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+}
+
+.left {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  left: -60px;
+}
+
+.right {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: -60px;
+}
+
+.down{
+  border-width: 0 2px 2px 0;
+  border-radius: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  bottom: 135px;
+}
+
+.downTop {
+  border-width: 0 2px 2px 0;
+  border-radius: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  bottom: 120px;
 }
 
