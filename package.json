@@ -1,0 +1,36 @@
+{
+  "name": "project_17",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel app/js/es6 -d app/js/es5"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agalem/template17.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agalem/template17/issues"
+  },
+  "homepage": "https://github.com/agalem/template17#readme",
+  "description": "",
+  "dependencies": {
+    "gulp-cssnano": "^2.1.2"
+  }
+}

@@ -1,0 +1,1 @@
+['Aga', 'Nata'].map( name => `${name}!`);
