@@ -1,6 +1,31 @@
 /* ------------------ VARIABLES ------------------ */
 /* COLORS */
 /* FONTS */
+/* ------------------ ANIMATIONS ------------------ */
+@keyframes pulseRight {
+  from {
+    right: -60px; }
+  to {
+    right: -65px; } }
+
+@keyframes pulseLeft {
+  from {
+    left: -60px; }
+  to {
+    left: -65px; } }
+
+@keyframes pulseDownTop {
+  from {
+    bottom: 120px; }
+  to {
+    bottom: 130px; } }
+
+@keyframes pulseDown {
+  from {
+    bottom: 135px; }
+  to {
+    bottom: 145px; } }
+
 /* ------------------ MIXINS ------------------ */
 /* ------------------ PROPER CONTENT ------------------ */
 body {
@@ -8,7 +33,6 @@ body {
   margin: 0; }
 
 .body-content-wrap {
-  background-color: black;
   height: 100%;
   width: 100vw;
   max-width: 1440px;
@@ -130,7 +154,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  overflow-x: hidden; }
   .cover-slider .section-content-wrap {
     display: -webkit-box;
     display: -webkit-flex;
@@ -164,23 +189,29 @@ body {
 .slide {
   width: 100%;
   height: 100%;
-  background-color: darkseagreen;
   position: absolute;
-  left: 0;
-  top: 0; }
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.5s;
+  /* Safari and Chrome */
+  -o-transition: all 0.5s;
+  /* Opera */
+  display: none; }
 
-.slide1 {
+.slide-1 {
   background: url("../images/slide1.png") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: top; }
+  background-position: top;
+  display: block; }
 
-.slide2 {
+.slide-2 {
   background-color: darkseagreen; }
 
-.slide3 {
+.slide-3 {
   background-color: #ed2024; }
 
 .arrow {
@@ -196,7 +227,9 @@ body {
   -ms-transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
-  left: -60px; }
+  animation-name: pulseLeft;
+  animation-duration: .8s;
+  animation-iteration-count: infinite; }
 
 .right {
   -webkit-transform: rotate(-45deg);
@@ -204,7 +237,9 @@ body {
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  right: -60px; }
+  animation-name: pulseRight;
+  animation-duration: .8s;
+  animation-iteration-count: infinite; }
 
 .down {
   border-width: 0 2px 2px 0;
@@ -214,7 +249,9 @@ body {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  bottom: 135px; }
+  animation-name: pulseDown;
+  animation-duration: .8s;
+  animation-iteration-count: infinite; }
 
 .downTop {
   border-width: 0 2px 2px 0;
@@ -224,4 +261,116 @@ body {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  bottom: 120px; }
+  animation-name: pulseDownTop;
+  animation-duration: .8s;
+  animation-iteration-count: infinite; }
+
+.reservation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px; }
+  .reservation .section-content-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+
+.section-title {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #ed2024;
+  text-transform: uppercase; }
+
+.handwriting {
+  font-family: "Norican", cursive;
+  font-size: 40px;
+  text-transform: none; }
+
+.description {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+  text-align: center;
+  width: 80%;
+  color: #9f9197; }
+
+.btn {
+  width: 200px;
+  height: 50px;
+  background-color: #ff7e66;
+  border: none;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 40px; }
+  .btn:hover {
+    cursor: pointer;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    background-color: #ed2024; }
+
+.cooking {
+  width: 100%;
+  background-color: #fff2ed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row; }
+  .cooking .section-title {
+    width: 40%;
+    color: #ff7e66;
+    text-align: center; }
+
+.photo-box {
+  width: 100%;
+  background: url("../images/cooking-main.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.text-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0; }
+
+.img_cooking {
+  width: 152px;
+  height: auto; }
+
+.baking {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px; }
+  .baking .section-content-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
