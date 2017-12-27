@@ -7,6 +7,10 @@ $red: rgb(237, 32, 36);
 $orange: rgb(255, 126, 102);
 $lightOrange: rgb(255,242,237);
 $grey: rgb(159, 145, 151);
+$gallery: rgb(255, 242, 237);
+$gallery_text: rgb(255, 126, 102);
+$gallery_hover: rgba(240, 27, 22, .8);
+$gallery_minus: rgb(255,244,129);
 
 
 /* FONTS */
@@ -54,7 +58,6 @@ $handwriting-font-family: 'Norican', cursive;
     bottom: 145px;
   }
 }
-
 
 /* ------------------ MIXINS ------------------ */
 
@@ -238,13 +241,11 @@ body {
   height: 100%;
   position: absolute;
   @include menu_transition;
-  display: none;
 }
 
 .slide-1 {
   @include background-center("../images/slide1.png");
   background-position: top;
-  display: block;
 }
 
 .slide-2 {
@@ -262,6 +263,7 @@ body {
   border-radius: 4px;
   padding: 10px;
   position: absolute;
+  cursor: pointer;
 }
 
 .left {
@@ -311,6 +313,25 @@ body {
   animation-duration: .8s;
   animation-iteration-count: infinite;
 }
+
+.moveRight {
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+  left: 100%;
+}
+
+.moveLeft {
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+  left: -100%;
+}
+
 
 .reservation {
   @include flexbox;
@@ -408,3 +429,231 @@ body {
     flex-direction: column;
   }
 }
+
+.menu-slider {
+  background-color: black;
+  width: 100%;
+  @include flexbox;
+  @include center_flex;
+  position: relative;
+  .section-content-wrap {
+    @include flexbox;
+    @include center_flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+  .text-box {
+    width: 50%;
+    min-width: 400px;
+    height: 100%;
+    align-self: flex-end;
+    @include flexbox;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
+
+.menu-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.menu-slide-1 {
+  @include background-center("../images/lemon-cake.png");
+}
+
+.menu-title {
+  font-family: $handwriting-font-family;
+  font-size: 60px;
+  font-style: italic;
+  color: $red;
+  text-shadow: 0px 7px 3px $white, -7px 0 3px $white, 0 -7px 3px $white, 7px 0 3px $white;
+  width: 60%;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.menu-description {
+  text-align: left;
+  color: $white;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.price {
+  color: $white;
+  font-size: 35px;
+}
+
+.menu-btn {
+  padding: 15px 25px;
+  border: 1px solid $white;
+  font-family: $menu-font-family;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    background-color: $red;
+  }
+}
+
+.shop {
+  background-color: $white;
+}
+
+.online-shopping {
+  @include flexbox;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.icon {
+  margin: 40px 0;
+  @include flexbox;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon_title {
+  font-family: $menu-font-family;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  font-weight:500;
+}
+
+.vertical-line {
+  content: "";
+  background-color: rgb(0,0,0);
+  height: 100px;
+  width: 1px;
+}
+
+
+.icon_online-shop {
+  width: 109px;
+  height: 83px;
+}
+
+.icon_free-shipping {
+  width: 157px;
+  height: 85px;
+}
+
+.icon_qual-products {
+  width: 105px;
+  height: 81px;
+}
+
+.gallery {
+  width: 100%;
+}
+
+.gallery_row {
+  background-color: rebeccapurple;
+  width: 100%;
+  @include flexbox;
+  flex-direction: row;
+}
+
+.gallery_nameBox {
+  background-color: $gallery;
+  @include flexbox;
+  flex-direction: column;
+  @include center_flex;
+  font-family: $menu-font-family;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $gallery_text;
+  font-size: 30px;
+}
+
+.item-small {
+  width: 50%;
+  height: 300px;
+  min-width: 260px;
+  cursor: pointer;
+  @include flexbox;
+  @include center_flex;
+}
+
+.item-big {
+  width: 100%;
+  height: 300px;
+  min-width: 520px;
+  cursor: pointer;
+  @include flexbox;
+  @include center_flex;
+}
+
+.item-1 {
+  @include background-center("../images/gllery_ice-cream.png");
+}
+
+.item-2 {
+  @include background-center("../images/gllery_cake.png");
+}
+
+.item-3 {
+  @include background-center("../images/gllery_cookies.png");
+}
+
+.item-4 {
+  @include background-center("../images/gllery_cake-blah.png");
+}
+
+.item-5 {
+  @include background-center("../images/gllery_fastfood.png");
+}
+
+.gallery_hover {
+  width: 0;
+  height: 0;
+  background-color: $gallery_hover;
+  @include flexbox;
+  @include center_flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.gallery_text {
+  font-family: $menu-font-family;
+  text-transform: uppercase;
+  color: $white;
+  font-size: 30px;
+  margin-bottom: -20px;
+  width: 70%;
+  text-align: center;
+}
+
+.gallery_minus {
+  font-family: $menu-font-family;
+  text-transform: uppercase;
+  color: $gallery_minus;
+  font-size: 30px;
+}
+
+.gallery_item:hover {
+  .gallery_hover {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 80%;
+    height: 80%;
+  }
+}
+
+

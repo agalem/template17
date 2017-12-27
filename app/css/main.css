@@ -196,8 +196,7 @@ body {
   -webkit-transition: all 0.5s;
   /* Safari and Chrome */
   -o-transition: all 0.5s;
-  /* Opera */
-  display: none; }
+  /* Opera */ }
 
 .slide-1 {
   background: url("../images/slide1.png") center center;
@@ -205,8 +204,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: top;
-  display: block; }
+  background-position: top; }
 
 .slide-2 {
   background-color: darkseagreen; }
@@ -219,7 +217,8 @@ body {
   border-width: 0 5px 5px 0;
   border-radius: 4px;
   padding: 10px;
-  position: absolute; }
+  position: absolute;
+  cursor: pointer; }
 
 .left {
   -webkit-transform: rotate(135deg);
@@ -264,6 +263,22 @@ body {
   animation-name: pulseDownTop;
   animation-duration: .8s;
   animation-iteration-count: infinite; }
+
+.moveRight {
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+  left: 100%; }
+
+.moveLeft {
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+  left: -100%; }
 
 .reservation {
   display: -webkit-box;
@@ -374,3 +389,254 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column; }
+
+.menu-slider {
+  background-color: black;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .menu-slider .section-content-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1; }
+  .menu-slider .text-box {
+    width: 50%;
+    min-width: 400px;
+    height: 100%;
+    align-self: flex-end;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around; }
+
+.menu-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+.menu-slide-1 {
+  background: url("../images/lemon-cake.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.menu-title {
+  font-family: "Norican", cursive;
+  font-size: 60px;
+  font-style: italic;
+  color: #ed2024;
+  text-shadow: 0px 7px 3px white, -7px 0 3px white, 0 -7px 3px white, 7px 0 3px white;
+  width: 60%;
+  margin: 0;
+  margin-bottom: 20px; }
+
+.menu-description {
+  text-align: left;
+  color: white;
+  font-size: 15px;
+  font-weight: 100; }
+
+.price {
+  color: white;
+  font-size: 35px; }
+
+.menu-btn {
+  padding: 15px 25px;
+  border: 1px solid white;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: white; }
+  .menu-btn:hover {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    background-color: #ed2024; }
+
+.shop {
+  background-color: white; }
+
+.online-shopping {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around; }
+
+.icon {
+  margin: 40px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+
+.icon_title {
+  font-family: "Fjalla One", sans-serif;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  font-weight: 500; }
+
+.vertical-line {
+  content: "";
+  background-color: black;
+  height: 100px;
+  width: 1px; }
+
+.icon_online-shop {
+  width: 109px;
+  height: 83px; }
+
+.icon_free-shipping {
+  width: 157px;
+  height: 85px; }
+
+.icon_qual-products {
+  width: 105px;
+  height: 81px; }
+
+.gallery {
+  width: 100%; }
+
+.gallery_row {
+  background-color: rebeccapurple;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row; }
+
+.gallery_nameBox {
+  background-color: #fff2ed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ff7e66;
+  font-size: 30px; }
+
+.item-small {
+  width: 50%;
+  height: 300px;
+  min-width: 260px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.item-big {
+  width: 100%;
+  height: 300px;
+  min-width: 520px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.item-1 {
+  background: url("../images/gllery_ice-cream.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.item-2 {
+  background: url("../images/gllery_cake.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.item-3 {
+  background: url("../images/gllery_cookies.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.item-4 {
+  background: url("../images/gllery_cake-blah.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.item-5 {
+  background: url("../images/gllery_fastfood.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.gallery_hover {
+  width: 0;
+  height: 0;
+  background-color: rgba(240, 27, 22, 0.8);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden; }
+
+.gallery_text {
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-size: 30px;
+  margin-bottom: -20px;
+  width: 70%;
+  text-align: center; }
+
+.gallery_minus {
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  color: #fff481;
+  font-size: 30px; }
+
+.gallery_item:hover .gallery_hover {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 80%;
+  height: 80%; }
