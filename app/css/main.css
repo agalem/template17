@@ -44,7 +44,11 @@ body {
 
 .section-content-wrap {
   height: 100%;
-  width: 75%; }
+  width: 75%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
 .header {
   background-color: white;
@@ -59,10 +63,6 @@ body {
   position: relative;
   z-index: 10; }
   .header .section-content-wrap {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between; }
@@ -157,10 +157,6 @@ body {
   align-items: center;
   overflow-x: hidden; }
   .cover-slider .section-content-wrap {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -289,10 +285,6 @@ body {
   align-items: center;
   padding: 100px; }
   .reservation .section-content-wrap {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
@@ -314,7 +306,7 @@ body {
   font-weight: 200;
   font-size: 17px;
   text-align: center;
-  width: 80%;
+  width: 100%;
   color: #9f9197; }
 
 .btn {
@@ -349,6 +341,8 @@ body {
     width: 40%;
     color: #ff7e66;
     text-align: center; }
+  .cooking .description {
+    width: 80%; }
 
 .photo-box {
   width: 100%;
@@ -382,10 +376,6 @@ body {
   align-items: center;
   padding: 100px; }
   .baking .section-content-wrap {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
@@ -401,10 +391,6 @@ body {
   align-items: center;
   position: relative; }
   .menu-slider .section-content-wrap {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -472,7 +458,12 @@ body {
     background-color: #ed2024; }
 
 .shop {
-  background-color: white; }
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center; }
 
 .online-shopping {
   display: -webkit-box;
@@ -481,7 +472,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+  width: 90%; }
 
 .icon {
   margin: 40px 0;
@@ -640,3 +632,319 @@ body {
   transition: all 0.5s;
   width: 80%;
   height: 80%; }
+
+.blog {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px;
+  background-color: white; }
+  .blog .section-content-wrap {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+
+.recipes_row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.recipe {
+  width: 250px;
+  height: 380px;
+  background-color: darkseagreen;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 10px; }
+
+.recipe_circle {
+  width: 280px;
+  height: 280px;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  top: -120px;
+  left: -15px;
+  -webkit-box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden; }
+  .recipe_circle .btn {
+    width: 80px;
+    height: 40px;
+    position: relative;
+    top: 250px; }
+
+.recipe-title {
+  color: black; }
+
+.recipe-handwriting {
+  color: #ed2024;
+  margin-top: -20px; }
+
+.recipe-text {
+  font-size: 25px;
+  position: relative;
+  z-index: 10;
+  top: 20px; }
+
+.recipe-1 {
+  background: url("../images/blog_pancakes.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.recipe-2 {
+  background: url("../images/blog_sandwich.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.recipe-3 {
+  background: url("../images/blog_breakfast.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.recipe-4 {
+  background: url("../images/blog_pizza.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.recipe:hover {
+  top: 15px; }
+  .recipe:hover .recipe_circle {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    width: 400px;
+    height: 400px;
+    left: -75px;
+    top: -120px; }
+
+.contact {
+  height: auto;
+  min-height: 400px;
+  padding: 100px;
+  background: url("../images/contact-background.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative; }
+
+.blackfilter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.contact-title {
+  color: white; }
+
+.contact-handwriting {
+  color: white; }
+
+.contact-form {
+  width: 80%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .contact-form fieldset {
+    border: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; }
+
+::-webkit-input-placeholder {
+  color: white; }
+
+::-moz-placeholder {
+  color: white; }
+
+:-ms-input-placeholder {
+  color: white; }
+
+::placeholder {
+  color: white; }
+
+.form-input {
+  width: 100%;
+  height: 30px;
+  margin: 0 20px;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 5px;
+  padding-left: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white; }
+  .form-input:nth-of-type(1) {
+    margin-left: 0; }
+  .form-input:nth-of-type(3) {
+    margin-right: 0; }
+
+.form-message {
+  height: 250px;
+  width: 99.5%;
+  background-color: transparent;
+  margin-top: 20px;
+  border: 1px solid white;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 14px;
+  color: white;
+  padding: 5px; }
+
+.form-btn {
+  width: 101%; }
+
+.contact-form_info label {
+  display: none; }
+
+.contact-info {
+  background-color: #fff2ed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .contact-info .section-content-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+
+.contact-info-elem {
+  background-color: white;
+  width: 250px;
+  height: 250px;
+  margin: 40px 10px; }
+
+.contact-icon {
+  height: 50%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; }
+
+.contact-data {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Fjalla One", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center; }
+  .contact-data h4 {
+    color: #464646;
+    font-size: 17px; }
+  .contact-data a {
+    color: #81868e;
+    font-size: 15px;
+    text-decoration: none; }
+
+.mail-icon {
+  background: url("../images/contact_email.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.address-icon {
+  background: url("../images/contact_adres.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.tel-icon {
+  background: url("../images/contact_phone.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.location {
+  height: 600px;
+  background-color: black;
+  position: relative; }
+  .location:hover .blackfilter {
+    display: none; }
+  .location .blackfilter {
+    justify-content: center; }
+    .location .blackfilter .section-title {
+      color: white;
+      font-size: 20px;
+      position: relative;
+      top: 40px;
+      z-index: 10; }
+    .location .blackfilter .handwriting {
+      font-size: 24px; }
+    .location .blackfilter .bck-circle {
+      width: 52px;
+      height: 52px;
+      background-color: #ed2024;
+      position: relative;
+      top: -22px;
+      left: -38px;
+      border-radius: 50px;
+      z-index: 1; }
+
+.map {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; }

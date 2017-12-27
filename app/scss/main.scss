@@ -11,6 +11,9 @@ $gallery: rgb(255, 242, 237);
 $gallery_text: rgb(255, 126, 102);
 $gallery_hover: rgba(240, 27, 22, .8);
 $gallery_minus: rgb(255,244,129);
+$contact_dark-grey: rgb(70,70,70);
+$contact_light-grey: rgb(129,134,142);
+$contact_bcg: rgb(255, 242, 237);
 
 
 /* FONTS */
@@ -116,6 +119,7 @@ body {
   //background-color: yellow;
   height: 100%;
   width: 75%;
+  @include flexbox;
 }
 
 .header {
@@ -126,7 +130,6 @@ body {
   @include center_flex;
   position: relative;
   .section-content-wrap {
-    @include flexbox;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
@@ -207,7 +210,6 @@ body {
   overflow-x: hidden;
   .section-content-wrap {
     //background-color: yellow;
-    @include flexbox;
     @include center_flex;
     flex-direction: column;
     position: relative;
@@ -338,7 +340,6 @@ body {
   @include center_flex;
   padding: 100px;
   .section-content-wrap {
-    @include flexbox;
     @include center_flex;
     flex-direction: column;
   }
@@ -363,7 +364,7 @@ body {
   font-weight: 200;
   font-size: 17px;
   text-align: center;
-  width: 80%;
+  width: 100%;
   color: $grey;
 }
 
@@ -399,6 +400,9 @@ body {
     color: $orange;
     text-align: center;
   }
+  .description {
+    width: 80%;
+  }
 }
 
 .photo-box {
@@ -424,7 +428,6 @@ body {
   @include center_flex;
   padding: 100px;
   .section-content-wrap {
-    @include flexbox;
     @include center_flex;
     flex-direction: column;
   }
@@ -437,7 +440,6 @@ body {
   @include center_flex;
   position: relative;
   .section-content-wrap {
-    @include flexbox;
     @include center_flex;
     flex-direction: column;
     position: relative;
@@ -508,6 +510,8 @@ body {
 
 .shop {
   background-color: $white;
+  @include flexbox;
+  justify-content: center;
 }
 
 .online-shopping {
@@ -515,6 +519,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  width: 90%;
 }
 
 .icon {
@@ -656,4 +661,308 @@ body {
   }
 }
 
+.blog {
+  @include flexbox;
+  @include center_flex;
+  flex-direction: column;
+  padding: 100px;
+  background-color: $white;
+  .section-content-wrap {
+    @include center_flex;
+    flex-direction: column;
+  }
+}
 
+.recipes_row {
+  @include flexbox;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.recipe {
+  width: 250px;
+  height: 380px;
+  background-color: darkseagreen;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+
+.recipe_circle {
+  width: 280px;
+  height: 280px;
+  background-color: $white;
+  border-radius: 100%;
+  position: absolute;
+  top: -120px;
+  left: -15px;
+  -webkit-box-shadow: 1px 2px 1px 2px rgba(0,0,0,.3);
+  -moz-box-shadow: 1px 2px 1px 2px rgba(0,0,0,.3);
+  box-shadow: 1px 2px 1px 2px rgba(0,0,0,.3);
+  overflow: hidden;
+  .btn {
+    width: 80px;
+    height: 40px;
+    position: relative;
+    top: 250px;
+  }
+}
+
+.recipe-title {
+  color: rgb(0,0,0);
+}
+
+.recipe-handwriting {
+  color: $red;
+  margin-top: -20px;
+}
+
+.recipe-text {
+  font-size: 25px;
+  position: relative;
+  z-index: 10;
+  top: 20px;
+}
+
+.recipe-1 {
+  @include background-center("../images/blog_pancakes.png");
+}
+
+.recipe-2 {
+  @include background-center("../images/blog_sandwich.png");
+}
+
+.recipe-3 {
+  @include background-center("../images/blog_breakfast.png");
+}
+
+.recipe-4 {
+  @include background-center("../images/blog_pizza.png");
+}
+
+.recipe:hover {
+  top:15px;
+  .recipe_circle {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    width: 400px;
+    height: 400px;
+    left: -75px;
+    top: -120px;
+  }
+}
+
+
+.contact {
+  height: auto;
+  min-height: 400px;
+  padding: 100px;
+  @include background-center("../images/contact-background.png");
+  position: relative;
+}
+
+.blackfilter {
+  @include flexbox;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+}
+
+.contact-title {
+  color: $white;
+}
+
+.contact-handwriting {
+  color: $white;
+}
+
+.contact-form {
+  width: 80%;
+  @include flexbox;
+  @include center_flex;
+  flex-direction: column;
+  fieldset {
+    border: none;
+    @include flexbox;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: $white;
+}
+
+::-moz-placeholder {
+  color: $white;
+}
+
+:-ms-input-placeholder {
+  color: $white;
+}
+
+::placeholder {
+  color: $white;
+}
+
+.form-input {
+  width: 100%;
+  height: 30px;
+  margin: 0 20px;
+  font-family: $menu-font-family;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 5px;
+  padding-left: 20px;
+  background-color: transparent;
+  border: 1px solid $white;
+  color: $white;
+  &:nth-of-type(1){
+    margin-left: 0;
+  }
+  &:nth-of-type(3){
+    margin-right: 0;
+  }
+}
+
+.form-message {
+  height: 250px;
+  width: 99.5%;
+  background-color: transparent;
+  margin-top: 20px;
+  border: 1px solid $white;
+  font-family: $menu-font-family;
+  font-size: 14px;
+  color: $white;
+  padding: 5px;
+}
+
+.form-btn {
+  width: 101%;
+}
+
+.contact-form_info {
+  label {
+    display: none;
+  }
+}
+
+.contact-info {
+  background-color: $contact_bcg;
+  @include flexbox;
+  @include center_flex;
+  .section-content-wrap {
+    @include flexbox;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.contact-info-elem {
+  background-color: $white;
+  width: 250px;
+  height: 250px;
+  margin: 40px 10px;
+}
+
+.contact-icon {
+  height: 50%;
+  width: 100%;
+  @include flexbox;
+  @include center_flex;
+  background-color: rgb(0,0,0);
+}
+
+.contact-data {
+  @include flexbox;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $menu-font-family;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  h4 {
+    color: $contact_dark-grey;
+    font-size: 17px;
+  }
+  a {
+    color: $contact_light-grey;
+    font-size: 15px;
+    text-decoration: none;
+  }
+}
+
+.mail-icon {
+  @include background-center("../images/contact_email.png");
+}
+
+.address-icon {
+  @include background-center("../images/contact_adres.png");
+}
+
+.tel-icon {
+  @include background-center("../images/contact_phone.png");
+}
+
+.location {
+  height: 600px;
+  background-color: rgb(0,0,0);
+  position: relative;
+  &:hover {
+    .blackfilter {
+      display: none;
+    }
+  }
+  .blackfilter {
+    justify-content: center;
+    .section-title {
+      color: $white;
+      font-size: 20px;
+      position: relative;
+      top: 40px;
+      z-index: 10;
+    }
+    .handwriting {
+      font-size: 24px;
+    }
+    .bck-circle {
+      width: 52px;
+      height: 52px;
+      background-color: $red;
+      position: relative;
+      top: -22px;
+      left: -38px;
+      border-radius: 50px;
+      z-index: 1;
+    }
+  }
+}
+
+.map {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}

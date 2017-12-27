@@ -79,14 +79,14 @@
 
     <section class="menu-slider">
         <div class="section-content-wrap">
-            <div class="text-box menu-text-1">
+            <article class="text-box menu-text-1">
                 <h3 class="menu-title">The Lemon Cake</h3>
                 <p class="description menu-description">Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod ter incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud </p>
                 <p class="handwriting price">&dollar; 15.00</p>
                 <a href="" class="menu-btn">view all</a>
-            </div>
+            </article>
             <a href="" class="arrow left"></a>
             <a href="" class="arrow right"></a>
         </div>
@@ -115,50 +115,155 @@
     <section class="gallery">
 
         <div class="gallery_row">
-            <div class="gallery_item item-1 item-small">
+            <article class="gallery_item item-1 item-small">
                 <div class="gallery_hover">
                     <p class="gallery_text">the best ice cream</p>
                     <p class="gallery_minus">-</p>
                 </div>
-            </div>
+            </article>
             <a href="" class="gallery_nameBox item-small">gallery</a>
-            <div class="gallery_item item-2 item-big">
+            <article class="gallery_item item-2 item-big">
                 <div class="gallery_hover">
                     <p class="gallery_text">a sweet cheese cake</p>
                     <p class="gallery_minus">-</p>
                 </div>
-            </div>
-        </div>
+            </article>
+        </div><!--gallery_row-->
 
         <div class="gallery_row">
-            <div class="gallery_item item-3 item-big">
+            <article class="gallery_item item-3 item-big">
                 <div class="gallery_hover">
                     <p class="gallery_text">the sweetest cookies</p>
                     <p class="gallery_minus">-</p>
                 </div>
-            </div>
-            <div class="gallery_item item-4 item-small">
+            </article>
+            <article class="gallery_item item-4 item-small">
                 <div class="gallery_hover">
                     <p class="gallery_text">the cake blah</p>
                     <p class="gallery_minus">-</p>
                 </div>
-            </div>
-            <div class="gallery_item item-5 item-small">
+            </article>
+            <article class="gallery_item item-5 item-small">
                 <div class="gallery_hover">
                     <p class="gallery_text">the fastest food</p>
                     <p class="gallery_minus">-</p>
                 </div>
-            </div>
-        </div>
+            </article>
+        </div><!--gallery_row-->
     </section><!--gallery-->
 
     <section class="blog">
+        <div class="section-content-wrap">
+            <h3 class="section-title">our <span class="handwriting">Blog</span></h3>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.</p>
+        </div><!--content-wrap-->
+        <div class="recipes_row">
+            <article class="recipe recipe-1">
+                <div class="recipe_circle">
+                    <button class="btn">view</button>
+                </div>
+                <p class="section-title recipe-title recipe-text">How to make</p>
+                <p class="handwriting recipe-handwriting recipe-text">the Food</p>
+            </article>
 
+            <article class="recipe recipe-2">
+                <div class="recipe_circle">
+                    <button class="btn">view</button>
+                </div>
+                <p class="section-title recipe-title recipe-text">How to make</p>
+                <p class="handwriting recipe-handwriting recipe-text">the Food</p>
+            </article>
+
+            <article class="recipe recipe-3">
+                <div class="recipe_circle">
+                    <button class="btn">view</button>
+                </div>
+                <p class="section-title recipe-title recipe-text">How to make</p>
+                <p class="handwriting recipe-handwriting recipe-text">the Food</p>
+            </article>
+
+            <article class="recipe recipe-4">
+                <div class="recipe_circle">
+                    <button class="btn">view</button>
+                </div>
+                <p class="section-title recipe-title recipe-text">How to make</p>
+                <p class="handwriting recipe-handwriting recipe-text">the Food</p>
+            </article>
+        </div><!--recipes-row-->
     </section><!--blog-->
 
+    <section class="contact">
+        <div class="blackfilter">
+            <h3 class="section-title contact-title">Contacts <span class="handwriting contact-handwriting">Us</span></h3>
+            <form method="post" class="contact-form">
+                <fieldset class="contact-form_info">
+                    <label for="name">Your name</label>
+                    <input type="text" name="name" id="name" placeholder="Your name" class="form-input">
+                    <label for="email">Your email</label>
+                    <input type="email" name="email" id="email" placeholder="Email address" class="form-input">
+                    <label for="subject">Subject of your message</label>
+                    <input type="text" name="subject" id="subject" placeholder="Subject" class="form-input">
+                </fieldset>
+                <input type="text" id="message" class="form-message">
+                <button type="submit" class="btn form-btn">send now</button>
+            </form>
+        </div>
+    </section><!--contact-->
+
+    <section class="contact-info">
+        <div class="section-content-wrap">
+
+            <article class="contact-info-elem">
+                <div class="contact-icon mail-icon">
+                    <img src="images/contact-icon_email.png" alt="Contact us via email">
+                </div>
+                <div class="contact-data">
+                    <h4>Email</h4>
+                    <a href="mailto:top@blah.com">top@blah.com</a>
+                </div>
+            </article>
+
+            <article class="contact-info-elem">
+                <div class="contact-icon address-icon">
+                    <img src="images/contact-icon_adres.png" alt="Visit us in person">
+                </div>
+                <div class="contact-data">
+                    <h4>Our restaurant</h4>
+                    <a href="https://www.google.pl/maps/place/431+Nguyễn+Khang,+Cầu+Giấy,+Hà+Nội,+Wietnam/@21.0293571,105.7980103,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ab43fcd71c37:0xbffe2db926c4fe14!8m2!3d21.0293571!4d105.800199" target="_blank">431-Nguyen Khang <br>Ha Noi-Viet Nam</a>
+                </div>
+            </article>
+
+            <article class="contact-info-elem">
+                <div class="contact-icon tel-icon">
+                    <img src="images/contact-icon_phone.png" alt="Contact us via email">
+                </div>
+                <div class="contact-data">
+                    <h4>Phone</h4>
+                    <a href="tel:(+84)7976809">(+84)-797-6809</a>
+                </div>
+            </article>
+
+        </div><!--content-wrap-->
+    </section><!--contact-info-->
+
+    <section class="location">
+        <div class="map" id="map"></div>
+
+        <div class="blackfilter">
+            <p class="section-title">find <span class="handwriting">Top</span>  on the map</p><div class="bck-circle"></div>
+        </div>
+    </section><!--map-->
+
 </div><!--body-content-wrap-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOlLI7cm-i3XWZvPIdN9jA1o7LWkSyB2I&callback=initMap">
+</script>
 <!--build:js js/main.min.js -->
 <script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
 <!-- endbuild -->
 </body>
 </html>
