@@ -26,18 +26,18 @@
         </div>
     </header>
 
-    <section class="cover-slider">
+    <section class="cover-slider" id="cover-slider">
         <div class="section-content-wrap">
             <h1 class="main-title">Taste on Our hands!</h1>
             <h2 class="welcome">- wellcome -</h2>
-            <i class="arrow left" id="left-slide"></i>
-            <i class="arrow right" id="right-slide"></i>
+            <i class="arrow left" id="left-slide" onclick=""></i>
+            <i class="arrow right" id="right-slide" onclick="next_slide(current + 1)"></i>
             <i class="arrow down" id="go-down"></i>
             <i class="arrow downTop" id="go-down2"></i>
         </div>
         <div class="slide slide-1"></div>
-        <!--<div class="slide slide-2"></div>
-        <div class="slide slide-3"></div>-->
+        <div class="slide slide-2"></div>
+        <div class="slide slide-3"></div>
     </section>
 
     <section class="reservation">
@@ -199,11 +199,11 @@
             <form method="post" class="contact-form">
                 <fieldset class="contact-form_info">
                     <label for="name">Your name</label>
-                    <input type="text" name="name" id="name" placeholder="Your name" class="form-input">
+                    <input type="text" name="name" id="name" placeholder="Your name" class="form-input form-control-inline">
                     <label for="email">Your email</label>
-                    <input type="email" name="email" id="email" placeholder="Email address" class="form-input">
+                    <input type="email" name="email" id="email" placeholder="Email address" class="form-input form-control-inline">
                     <label for="subject">Subject of your message</label>
-                    <input type="text" name="subject" id="subject" placeholder="Subject" class="form-input">
+                    <input type="text" name="subject" id="subject" placeholder="Subject" class="form-input form-control-inline">
                 </fieldset>
                 <input type="text" id="message" class="form-message">
                 <button type="submit" class="btn form-btn">send now</button>
@@ -254,6 +254,20 @@
             <p class="section-title">find <span class="handwriting">Top</span>  on the map</p><div class="bck-circle"></div>
         </div>
     </section><!--map-->
+
+    <footer class="footer">
+        <div class="section-content-wrap">
+            <a href="/" class="handwriting logo">Top</a>
+            <p class="rights">Copyright 2016. All rights Reserved</p>
+            <div class="social-media">
+                <a href="/"><img src="images/facebook.png" alt="Go to Facebook"></a>
+                <a href="/"><img src="images/twitter.png" alt="Go to Twitter"></a>
+                <a href="/"><img src="images/linkedin.png" alt="Go to LinkedIn"></a>
+                <a href="/"><img src="images/instagramm.png" alt="Go to Instagram"></a>
+                <a href="/"><img src="images/vimeo.png" alt="Go to Vimeo"></a>
+            </div>
+        </div>
+    </footer>
 
 </div><!--body-content-wrap-->
 <script async defer

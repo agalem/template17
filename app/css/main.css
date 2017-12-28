@@ -143,7 +143,7 @@ body {
   left: -2px; }
 
 .cover-slider {
-  background-color: indianred;
+  background-color: black;
   width: 100%;
   height: 705px;
   margin-top: -75px;
@@ -155,7 +155,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden; }
+  overflow: hidden; }
   .cover-slider .section-content-wrap {
     justify-content: center;
     align-items: center;
@@ -186,27 +186,27 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  /* Firefox 4 */
-  -webkit-transition: all 0.5s;
-  /* Safari and Chrome */
-  -o-transition: all 0.5s;
-  /* Opera */ }
+  left: 0;
+  top: 0;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s; }
 
 .slide-1 {
+  background-color: #ed2024; }
+
+.slide-2 {
+  background-color: darkseagreen; }
+
+.slide-3 {
   background: url("../images/slide1.png") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-position: top; }
-
-.slide-2 {
-  background-color: darkseagreen; }
-
-.slide-3 {
-  background-color: #ed2024; }
 
 .arrow {
   border: solid rgba(255, 255, 255, 0.8);
@@ -224,7 +224,9 @@ body {
   transform: rotate(135deg);
   animation-name: pulseLeft;
   animation-duration: .8s;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  left: 0;
+  top: 50%; }
 
 .right {
   -webkit-transform: rotate(-45deg);
@@ -234,7 +236,9 @@ body {
   transform: rotate(-45deg);
   animation-name: pulseRight;
   animation-duration: .8s;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  right: 0;
+  top: 50%; }
 
 .down {
   border-width: 0 2px 2px 0;
@@ -246,7 +250,8 @@ body {
   transform: rotate(45deg);
   animation-name: pulseDown;
   animation-duration: .8s;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  left: 50%; }
 
 .downTop {
   border-width: 0 2px 2px 0;
@@ -258,7 +263,8 @@ body {
   transform: rotate(45deg);
   animation-name: pulseDownTop;
   animation-duration: .8s;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  left: 50%; }
 
 .moveRight {
   -webkit-transition: all 2s;
@@ -412,6 +418,8 @@ body {
 .menu-slide {
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
   position: absolute; }
 
 .menu-slide-1 {
@@ -783,7 +791,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  margin: 0;
+  padding: 0; }
   .contact-form fieldset {
     border: none;
     display: -webkit-box;
@@ -806,10 +816,15 @@ body {
 ::placeholder {
   color: white; }
 
+.contact-form_info {
+  height: 40px;
+  position: relative; }
+  .contact-form_info label {
+    display: none; }
+
 .form-input {
-  width: 100%;
+  width: 240px;
   height: 30px;
-  margin: 0 20px;
   font-family: "Fjalla One", sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
@@ -817,11 +832,16 @@ body {
   padding-left: 20px;
   background-color: transparent;
   border: 1px solid white;
-  color: white; }
+  color: white;
+  position: absolute; }
   .form-input:nth-of-type(1) {
-    margin-left: 0; }
+    left: 5px; }
+  .form-input:nth-of-type(2) {
+    left: 37%; }
   .form-input:nth-of-type(3) {
-    margin-right: 0; }
+    right: 5px; }
+  .form-input:focus {
+    box-shadow: 1px 1px 5px white; }
 
 .form-message {
   height: 250px;
@@ -833,12 +853,11 @@ body {
   font-size: 14px;
   color: white;
   padding: 5px; }
+  .form-message:focus {
+    box-shadow: 1px 1px 5px white; }
 
 .form-btn {
   width: 101%; }
-
-.contact-form_info label {
-  display: none; }
 
 .contact-info {
   background-color: #fff2ed;
@@ -948,3 +967,26 @@ body {
   top: 0;
   width: 100%;
   height: 100%; }
+
+.footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; }
+  .footer .section-content-wrap {
+    flex-direction: column;
+    align-items: center; }
+
+.logo {
+  text-decoration: none;
+  color: #ed2024;
+  font-size: 45px; }
+
+.rights {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #81868e; }
