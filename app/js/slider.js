@@ -1,23 +1,31 @@
 /*
-<section class="cover-slider" id="cover-slider">
+<section class="menu-slider">
         <div class="section-content-wrap">
-            <h1 class="main-title">Taste on Our hands!</h1>
-            <h2 class="welcome">- wellcome -</h2>
-            <i class="arrow left" id="left-slide" onclick=""></i>
-            <i class="arrow right" id="right-slide" onclick="next_slide(current + 1)"></i>
-            <i class="arrow down" id="go-down"></i>
-            <i class="arrow downTop" id="go-down2"></i>
+            <article class="text-box menu-text menu-text-1">
+                <h3 class="menu-title">The Lemon Cake</h3>
+                <p class="description menu-description">Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod ter incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud </p>
+                <p class="handwriting price">&dollar; 15.00</p>
+                <a href="" class="menu-btn">view all</a>
+            </article>
+
+            <a href="" class="arrow left"></a>
+            <a href="" class="arrow right"></a>
         </div>
-        <div class="slide slide-1"></div>
-        <div class="slide slide-2"></div>
-        <div class="slide slide-3"></div>
+        <div class="menu-slide menu-slide-1"></div>
+        <div class="menu-slide menu-slide-2"></div>
+        <div class="menu-slide menu-slide-3"></div>
     </section>
  */
 
 var topSlideList = document.getElementsByClassName('slide');
-var slidesNum = topSlideList.length;
 var nextBtn = document.getElementById('right-slide');
+var prevBtn = document.getElementById('left-slide');
 
+var menuSlideList = document.getElementsByClassName('menu-slide');
+var menuNextBtn = document.getElementById('menu-right-slide');
+var menuPrevBtn = document.getElementById('menu-left-slide');
 
 
 var prev = 0;
@@ -26,11 +34,11 @@ var next = 2;
 
 function ifNextExists() {
 
-    if(prev === slidesNum){
+    if(prev === 3){
         prev = 0;
-    } else if(next === slidesNum){
+    } else if(next === 3){
         next = 0;
-    } else if (current === slidesNum){
+    } else if (current === 3){
         current = 0;
     }
 
@@ -58,6 +66,16 @@ function changeStyles() {
     topSlideList[next].style.left = '100vw';
 }
 
+function changeMenuStyles() {
+    menuSlideList[prev].style.zIndex = '1';
+    menuSlideList[next].style.zIndex = '1';
+    menuSlideList[current].style.zIndex = '5';
+
+    menuSlideList[prev].style.left = '-100vw';
+    menuSlideList[current].style.left = '0';
+    menuSlideList[next].style.left = '100vw';
+}
+
 
 function showNext() {
 
@@ -69,6 +87,16 @@ function showNext() {
 
     changeStyles();
 
+}
+
+function menuShowNext() {
+    current++;
+    prev++;
+    next++;
+
+    ifNextExists();
+
+    changeMenuStyles();
 }
 
 
@@ -84,4 +112,42 @@ function showPrev() {
 
 }
 
-//coverInterval = window.setInterval(showNext, 10000);
+function menuShowPrev() {
+
+    current--;
+    prev--;
+    next--;
+
+    ifPrevExists();
+
+    changeMenuStyles();
+
+}
+
+coverInterval = window.setInterval(showNext, 10000);
+
+nextBtn.addEventListener('click', function () {
+    window.clearInterval(coverInterval);
+
+    showNext();
+    coverInterval = window.setInterval(showNext, 10000);
+});
+
+prevBtn.addEventListener('click', function () {
+    window.clearInterval(coverInterval);
+
+    showPrev();
+    coverInterval = window.setInterval(showNext, 10000);
+});
+
+menuNextBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    menuShowNext();
+});
+
+menuPrevBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    menuShowPrev();
+})

@@ -413,13 +413,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .menu-slider .section-content-wrap {
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative;
-    z-index: 1; }
+    z-index: 5; }
   .menu-slider .text-box {
     width: 50%;
     min-width: 400px;
@@ -438,14 +439,41 @@ body {
   height: 100%;
   left: 0;
   top: 0;
-  position: absolute; }
+  position: absolute;
+  z-index: 1; }
 
 .menu-slide-1 {
   background: url("../images/lemon-cake.png") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  left: -100vw; }
+
+.menu-slide-2 {
+  background: url("../images/thanksgiving.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  left: 0; }
+
+.menu-slide-3 {
+  background: url("../images/coffee.png") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  left: 100vw; }
+
+.menu-text-1 {
+  display: block; }
+
+.menu-text-2 {
+  display: none; }
+
+.menu-text-3 {
+  display: none; }
 
 .menu-title {
   font-family: "Norican", cursive;
@@ -582,7 +610,6 @@ body {
 .item-big {
   width: 100%;
   height: 300px;
-  min-width: 520px;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1013,7 +1040,24 @@ body {
   letter-spacing: 1px;
   color: #81868e; }
 
+@media all and (max-width: 1100px) {
+  .gallery_row {
+    flex-direction: row;
+    flex-wrap: wrap; }
+  .contact {
+    height: 500px; }
+  .contact-form_info {
+    height: 150px; }
+  .form-input {
+    width: 200px;
+    margin: 10px 0;
+    position: static; } }
+
 @media all and (max-width: 900px) {
+  .left {
+    margin-left: 20px; }
+  .right {
+    margin-right: 20px; }
   .menu-btn {
     padding: 15px 25px;
     border: 1px solid white;
@@ -1041,7 +1085,8 @@ body {
     top: 11px;
     right: 40px; }
   .header {
-    height: 65px; }
+    height: 65px;
+    position: fixed; }
   .site-logo {
     width: 50px; }
   .menu-list {
@@ -1072,3 +1117,82 @@ body {
       top: 25px; }
   .menu-list-li:last-child {
     padding-bottom: 30px; } }
+
+@media all and (max-width: 540px) {
+  .photo-box {
+    display: none; }
+  .menu-slider {
+    background-color: black;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    .menu-slider .section-content-wrap {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      z-index: 1; }
+    .menu-slider .text-box {
+      width: 50%;
+      min-width: 400px;
+      height: 100%;
+      align-self: flex-end;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around; }
+  .menu-slide {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute; }
+  .menu-title {
+    font-family: "Norican", cursive;
+    font-size: 60px;
+    font-style: italic;
+    color: #ed2024;
+    text-shadow: 0px 7px 3px white, -7px 0 3px white, 0 -7px 3px white, 7px 0 3px white;
+    width: 60%;
+    margin: 0;
+    margin-bottom: 20px; }
+  .menu-description {
+    text-align: left;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 15px;
+    font-weight: 100;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    margin-left: 40px;
+    padding: 20px; }
+  .price {
+    color: white;
+    font-size: 35px; }
+  .menu-btn {
+    padding: 15px 25px;
+    border: 1px solid white;
+    font-family: "Fjalla One", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer; }
+    .menu-btn:hover {
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+      background-color: #ed2024; }
+  .text-box {
+    padding: 80px 0; }
+  .item-small {
+    width: 100%; } }
