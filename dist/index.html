@@ -9,18 +9,20 @@
 </head>
 <body>
 <div class="body-content-wrap">
-    <header class="header">
+    <header class="header" id="header">
         <div class="section-content-wrap">
             <a href="" class="site-logo"><img src="images/logo.png" alt="Logo - top food and drink"></a>
+            <button class="menu-btn menu-btn-media " id="menu-btn" >
+                Menu</button>
             <nav class="menu-nav">
-                <ul class="menu-list">
-                    <li><a href="">home</a></li>
-                    <li><a href="">reservation</a></li>
-                    <li><a href="">menu</a></li>
-                    <li><a href="">blog</a></li>
-                    <li><a href="">features</a></li>
-                    <li><a href="">shop</a></li>
-                    <li><a href="">contacts</a></li>
+                <ul class="menu-list " id="menu-list">
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="#header">home</a></li>
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="#reservation">reservation</a></li>
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="#menu">menu</a></li>
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="#blog">blog</a></li>
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="#features">features</a></li>
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="#shop">shop</a></li>
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="#contacts">contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,16 +33,17 @@
             <h1 class="main-title">Taste on Our hands!</h1>
             <h2 class="welcome">- wellcome -</h2>
             <i class="arrow left" id="left-slide" onclick=""></i>
-            <i class="arrow right" id="right-slide" onclick="next_slide(current + 1)"></i>
-            <i class="arrow down" id="go-down"></i>
-            <i class="arrow downTop" id="go-down2"></i>
+            <i class="arrow right" id="right-slide" onclick=""></i>
+            <i class="arrow down" id="go-down" onclick="document.querySelector('#reservation').scrollIntoView({ behavior: 'smooth' });"></i>
+            <i class="arrow downTop" id="go-down2" onclick="document.querySelector('#reservation').scrollIntoView({ behavior: 'smooth' });"></i>
         </div>
+
         <div class="slide slide-1"></div>
         <div class="slide slide-2"></div>
         <div class="slide slide-3"></div>
     </section>
 
-    <section class="reservation">
+    <section class="reservation" id="reservation">
         <div class="section-content-wrap">
             <h3 class="section-title">welcome to our <span class="handwriting">Top</span></h3>
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -64,7 +67,7 @@
             </div>
     </section>
 
-    <section class="baking">
+    <section class="baking" id="menu">
         <div class="section-content-wrap">
             <h3 class="section-title">our <span class="handwriting">Baking</span></h3>
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -110,7 +113,7 @@
         </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="features">
 
         <div class="gallery_row">
             <article class="gallery_item item-1 item-small">
@@ -150,7 +153,7 @@
         </div><!--gallery_row-->
     </section><!--gallery-->
 
-    <section class="blog">
+    <section class="blog" id="blog">
         <div class="section-content-wrap">
             <h3 class="section-title">our <span class="handwriting">Blog</span></h3>
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -211,7 +214,7 @@
         </div>
     </section><!--contact-->
 
-    <section class="contact-info">
+    <section class="contact-info" id="contacts">
         <div class="section-content-wrap">
 
             <article class="contact-info-elem">
@@ -247,7 +250,7 @@
         </div><!--content-wrap-->
     </section><!--contact-info-->
 
-    <section class="location">
+    <section class="location" id="shop">
         <div class="map" id="map"></div>
 
         <div class="blackfilter">
@@ -273,6 +276,7 @@
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOlLI7cm-i3XWZvPIdN9jA1o7LWkSyB2I&callback=initMap">
 </script>
+
 <script src="js/main.min.js"></script>
 </body>
 </html>

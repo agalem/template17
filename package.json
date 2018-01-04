@@ -11,15 +11,15 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.21.0",
+    "browser-sync": "^2.23.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.6",
     "gulp-imagemin": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-useref": "^3.1.2",
-    "run-sequence": "^2.1.0"
+    "gulp-useref": "^3.1.4",
+    "run-sequence": "^2.2.1"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/agalem/template17#readme",
   "dependencies": {
-    "engine.io-parser": "^2.1.1",
+    "engine.io-parser": "^2.1.2",
     "gulp-cssnano": "^2.1.2"
   },
   "description": ""
