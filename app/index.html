@@ -11,14 +11,14 @@
 </head>
 <body>
 <div class="body-content-wrap">
-    <header class="header" id="header">
+    <header class="header">
         <div class="section-content-wrap">
             <a href="" class="site-logo"><img src="images/logo.png" alt="Logo - top food and drink"></a>
             <button class="menu-btn menu-btn-media " id="menu-btn" >
                 Menu</button>
             <nav class="menu-nav">
                 <ul class="menu-list " id="menu-list">
-                    <li class="menu-list-li"><a class="menu-list-li-a" href="#header">home</a></li>
+                    <li class="menu-list-li"><a class="menu-list-li-a" href="/">home</a></li>
                     <li class="menu-list-li"><a class="menu-list-li-a" href="#reservation">reservation</a></li>
                     <li class="menu-list-li"><a class="menu-list-li-a" href="#menu">menu</a></li>
                     <li class="menu-list-li"><a class="menu-list-li-a" href="#blog">blog</a></li>
@@ -34,8 +34,8 @@
         <div class="section-content-wrap">
             <h1 class="main-title">Taste on Our hands!</h1>
             <h2 class="welcome">- wellcome -</h2>
-            <i class="arrow left" id="left-slide" onclick=""></i>
-            <i class="arrow right" id="right-slide" onclick=""></i>
+            <i class="arrow left" id="left-slide"></i>
+            <i class="arrow right" id="right-slide"></i>
             <i class="arrow down" id="go-down" onclick="document.querySelector('#reservation').scrollIntoView({ behavior: 'smooth' });"></i>
             <i class="arrow downTop" id="go-down2" onclick="document.querySelector('#reservation').scrollIntoView({ behavior: 'smooth' });"></i>
         </div>
@@ -81,22 +81,56 @@
     </section>
 
     <section class="menu-slider">
-        <div class="section-content-wrap">
-            <article class="text-box menu-text menu-text-1">
-                <h3 class="menu-title">The Lemon Cake</h3>
-                <p class="description menu-description">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod ter incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud </p>
-                <p class="handwriting price">&dollar; 15.00</p>
-                <a href="" class="menu-btn">view all</a>
-            </article>
 
-            <a href="" class="arrow left" id="menu-left-slide"></a>
-            <a href="" class="arrow right" id="menu-right-slide"></a>
+        <div class="menu-slide menu-slide-1">
+            <div class="section-content-wrap">
+                <article class="text-box menu-text">
+                    <h3 class="menu-title">The Sweet Cookie</h3>
+                    <p class="description menu-description">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod ter incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud </p>
+                    <p class="handwriting price">&dollar; 10.00</p>
+                    <a href="" class="menu-btn">view all</a>
+                </article>
+
+                <i class="arrow left menu-goLeft"></i>
+                <i class="arrow right menu-goRight"></i>
+            </div>
         </div>
-        <div class="menu-slide menu-slide-1"></div>
-        <div class="menu-slide menu-slide-2"></div>
-        <div class="menu-slide menu-slide-3"></div>
+
+        <div class="menu-slide menu-slide-2">
+            <div class="section-content-wrap">
+                <article class="text-box menu-text">
+                    <h3 class="menu-title">The Lemon Cake</h3>
+                    <p class="description menu-description">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod ter incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud </p>
+                    <p class="handwriting price">&dollar; 15.00</p>
+                    <a href="" class="menu-btn">view all</a>
+                </article>
+
+                <i class="arrow left menu-goLeft"></i>
+                <i class="arrow right menu-goRight"></i>
+            </div>
+        </div>
+
+
+        <div class="menu-slide menu-slide-3">
+            <div class="section-content-wrap">
+                <article class="text-box menu-text">
+                    <h3 class="menu-title">The Best Coffee</h3>
+                    <p class="description menu-description">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod ter incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud </p>
+                    <p class="handwriting price">&dollar; 8.00</p>
+                    <a href="" class="menu-btn">view all</a>
+                </article>
+
+                <i class="arrow left menu-goLeft"></i>
+                <i class="arrow right menu-goRight"></i>
+            </div>
+        </div>
+
     </section>
     
     <section class="shop">

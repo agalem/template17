@@ -114,7 +114,6 @@ body {
 }
 
 .body-content-wrap {
-  height: 100%;
   width: 100vw;
   max-width: 1440px;
   position: absolute;
@@ -122,6 +121,7 @@ body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .section-content-wrap {
@@ -460,17 +460,12 @@ body {
 }
 
 .menu-slider {
-  background-color: black;
   width: 100%;
-  @include flexbox;
-  @include center_flex;
-  position: relative;
-  overflow: hidden;
+  background-color: black;
   .section-content-wrap {
     @include center_flex;
     flex-direction: column;
     position: relative;
-    z-index: 5;
   }
   .text-box {
     width: 50%;
@@ -486,37 +481,24 @@ body {
 
 .menu-slide {
   width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  position: absolute;
-  z-index: 1;
+  height: 600px;
+  @include flexbox;
+  @include center_flex;
 }
 
 .menu-slide-1 {
   @include background-center("../images/lemon-cake.png");
-  left: -100vw;
+  display: none;
+
 }
 
 .menu-slide-2 {
   @include background-center("../images/thanksgiving.png");
-  left: 0;
+  display: flex;
 }
 
 .menu-slide-3 {
   @include background-center("../images/coffee.png");
-  left: 100vw;
-}
-
-.menu-text-1 {
-  display: block;
-}
-
-.menu-text-2 {
-  display: none;
-}
-
-.menu-text-3 {
   display: none;
 }
 
@@ -1131,6 +1113,7 @@ body {
   .header {
     height: 65px;
     position: fixed;
+    background-color: rgba(255,255,255,0.95);
   }
 
   .site-logo {
@@ -1187,37 +1170,7 @@ body {
     display: none;
   }
 
-  .menu-slider {
-    background-color: black;
-    width: 100%;
-    @include flexbox;
-    @include center_flex;
-    position: relative;
-    overflow: hidden;
-    .section-content-wrap {
-      @include center_flex;
-      flex-direction: column;
-      position: relative;
-      z-index: 1;
-    }
-    .text-box {
-      width: 50%;
-      min-width: 400px;
-      height: 100%;
-      align-self: flex-end;
-      @include flexbox;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-around;
-    }
-  }
 
-  .menu-slide {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    position: absolute;
-  }
 
 
   .menu-title {

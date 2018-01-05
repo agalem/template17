@@ -1,31 +1,10 @@
-/*
-<section class="menu-slider">
-        <div class="section-content-wrap">
-            <article class="text-box menu-text menu-text-1">
-                <h3 class="menu-title">The Lemon Cake</h3>
-                <p class="description menu-description">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod ter incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud </p>
-                <p class="handwriting price">&dollar; 15.00</p>
-                <a href="" class="menu-btn">view all</a>
-            </article>
-
-            <a href="" class="arrow left"></a>
-            <a href="" class="arrow right"></a>
-        </div>
-        <div class="menu-slide menu-slide-1"></div>
-        <div class="menu-slide menu-slide-2"></div>
-        <div class="menu-slide menu-slide-3"></div>
-    </section>
- */
-
 var topSlideList = document.getElementsByClassName('slide');
 var nextBtn = document.getElementById('right-slide');
 var prevBtn = document.getElementById('left-slide');
 
 var menuSlideList = document.getElementsByClassName('menu-slide');
-var menuNextBtn = document.getElementById('menu-right-slide');
-var menuPrevBtn = document.getElementById('menu-left-slide');
+var menuNextBtn = document.getElementsByClassName('menu-goRight');
+var menuPrevBtn = document.getElementsByClassName('menu-goLeft');
 
 
 var prev = 0;
@@ -67,13 +46,9 @@ function changeStyles() {
 }
 
 function changeMenuStyles() {
-    menuSlideList[prev].style.zIndex = '1';
-    menuSlideList[next].style.zIndex = '1';
-    menuSlideList[current].style.zIndex = '5';
-
-    menuSlideList[prev].style.left = '-100vw';
-    menuSlideList[current].style.left = '0';
-    menuSlideList[next].style.left = '100vw';
+    menuSlideList[prev].style.display = 'none';
+    menuSlideList[current].style.display = 'flex';
+    menuSlideList[next].style.display = 'none';
 }
 
 
@@ -140,14 +115,15 @@ prevBtn.addEventListener('click', function () {
     coverInterval = window.setInterval(showNext, 10000);
 });
 
-menuNextBtn.addEventListener('click', function (e) {
-    e.preventDefault();
 
-    menuShowNext();
-});
+for(var i=0; i<menuNextBtn.length; i++){
+    menuNextBtn[i].addEventListener('click', function () {
+        menuShowNext();
+    })
+}
 
-menuPrevBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    menuShowPrev();
-})
+for(var i=0; i<menuPrevBtn.length; i++){
+    menuPrevBtn[i].addEventListener('click', function () {
+        menuShowPrev();
+    })
+}
