@@ -1097,7 +1097,7 @@ body {
       color: $red;
       background-color: $color_menu-slide;
     }
-    &.active {
+    .active {
       color: $red;
       background-color: $color_menu-slide;
     }
@@ -1160,17 +1160,60 @@ body {
   }
 
 
+  .contact-form_info {
+    height: 40px;
+    position: relative;
+    label {
+      display: none;
+    }
+    @include flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .form-input {
+      width: 80%;
+      height: 30px;
+      font-family: $menu-font-family;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 5px;
+      padding-left: 20px;
+      background-color: transparent;
+      border: 1px solid $white;
+      color: $white;
+      position: static;
+      display: flex;
+      &:focus {
+        box-shadow: 1px 1px 5px $white;
+      }
+    }
+  }
 
 }//media < 900px
 
 @media all and (max-width: 540px){
 
 
-  .photo-box {
-    display: none;
+  .main-title {
+    top: 20px;
   }
 
 
+
+  .section-content-wrap {
+    width: 95%;
+  }
+
+  .menu-btn {
+    &:hover {
+      color: $color_menu-slide;
+    }
+  }
+
+
+  .photo-box {
+    display: none;
+  }
 
 
   .menu-title {
@@ -1225,6 +1268,14 @@ body {
 
   .item-small {
     width: 100%;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .online-shopping {
+    flex-direction: column;
   }
 
 }//media < 540px

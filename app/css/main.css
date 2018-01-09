@@ -1060,7 +1060,7 @@ body {
       transition: all 1s;
       color: #ed2024;
       background-color: #fff581; }
-    .menu-btn.active {
+    .menu-btn .active {
       color: #ed2024;
       background-color: #fff581; }
   .menu-btn-media {
@@ -1101,9 +1101,42 @@ body {
     .menu-list-li:first-child:before {
       top: 25px; }
   .menu-list-li:last-child {
-    padding-bottom: 30px; } }
+    padding-bottom: 30px; }
+  .contact-form_info {
+    height: 40px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .contact-form_info label {
+      display: none; }
+    .contact-form_info .form-input {
+      width: 80%;
+      height: 30px;
+      font-family: "Fjalla One", sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 5px;
+      padding-left: 20px;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      position: static;
+      display: flex; }
+      .contact-form_info .form-input:focus {
+        box-shadow: 1px 1px 5px white; } }
 
 @media all and (max-width: 540px) {
+  .main-title {
+    top: 20px; }
+  .section-content-wrap {
+    width: 95%; }
+  .menu-btn:hover {
+    color: #fff581; }
   .photo-box {
     display: none; }
   .menu-title {
@@ -1146,4 +1179,8 @@ body {
   .text-box {
     padding: 80px 0; }
   .item-small {
-    width: 100%; } }
+    width: 100%; }
+  .vertical-line {
+    display: none; }
+  .online-shopping {
+    flex-direction: column; } }
