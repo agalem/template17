@@ -219,7 +219,7 @@ body {
     @include center_flex;
     flex-direction: column;
     position: relative;
-    z-index: 10;
+    z-index: 6;
   }
 }
 
@@ -250,8 +250,11 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 300%;
+  width: 300vw;
+  margin: 0;
+  padding: 0;
   @include menu_transition;
+  z-index: 1;
 }
 
 .slide {

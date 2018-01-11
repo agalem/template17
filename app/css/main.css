@@ -164,7 +164,7 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
-    z-index: 10; }
+    z-index: 6; }
 
 .main-title {
   font-family: "Norican", cursive;
@@ -191,14 +191,17 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 300%;
+  width: 300vw;
+  margin: 0;
+  padding: 0;
   transition: all 0.5s;
   -moz-transition: all 0.5s;
   /* Firefox 4 */
   -webkit-transition: all 0.5s;
   /* Safari and Chrome */
   -o-transition: all 0.5s;
-  /* Opera */ }
+  /* Opera */
+  z-index: 1; }
 
 .slide {
   height: 100%;
