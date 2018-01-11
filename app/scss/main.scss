@@ -234,6 +234,7 @@ body {
   text-shadow: 0px 7px 3px $white, -7px 0 3px $white, 0 -7px 3px $white, 7px 0 3px $white;
   position: relative;
   top: -20px;
+  z-index: 10;
 }
 
 .welcome {
@@ -258,24 +259,22 @@ body {
   -ms-transition: left 1;
   -o-transition: left 1s;
   transition: left 1s;
+  left: 0;
 }
 
 .slide-1 {
   @include background-center("../images/slide1.png");
   background-position: top;
-  left: -100vw;
 }
 
 .slide-2 {
   @include background-center("../images/slide2.png");
   background-position: top;
-  left: 0;
 }
 
 .slide-3 {
   @include background-center("../images/slide3.png");
   background-position: top;
-  left: 100vw;
 }
 
 
@@ -462,6 +461,8 @@ body {
 .menu-slider {
   width: 100%;
   background-color: black;
+  position: relative;
+  height: 600px;
   .section-content-wrap {
     @include center_flex;
     flex-direction: column;
@@ -484,22 +485,20 @@ body {
   height: 600px;
   @include flexbox;
   @include center_flex;
+  position: absolute;
+  @include menu_transition;
 }
 
 .menu-slide-1 {
   @include background-center("../images/lemon-cake.png");
-  display: none;
-
 }
 
 .menu-slide-2 {
   @include background-center("../images/thanksgiving.png");
-  display: flex;
 }
 
 .menu-slide-3 {
   @include background-center("../images/coffee.png");
-  display: none;
 }
 
 .menu-title {
@@ -518,6 +517,12 @@ body {
   color: $white;
   font-size: 15px;
   font-weight: 100;
+}
+
+.menu-slide-2 {
+  .menu-description {
+    color: $red;
+  }
 }
 
 .price {
@@ -1070,6 +1075,12 @@ body {
 
 @media all and (max-width: 900px) {
 
+  .cover-slider {
+    .section-content-wrap {
+      width: 60%;
+    }
+  }
+
   .left {
     margin-left: 20px;
   }
@@ -1114,6 +1125,7 @@ body {
     height: 65px;
     position: fixed;
     background-color: rgba(255,255,255,0.95);
+    z-index: 11;
   }
 
   .site-logo {
@@ -1159,6 +1171,23 @@ body {
     padding-bottom: 30px;
   }
 
+  .menu-title {
+    font-size: 60px;
+  }
+
+  .menu-description {
+    color: rgba(0,0,0,.8);
+    background-color: rgba(255,255,255,.5);
+    width: 80%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .price {
+    color: $white;
+    font-size: 35px;
+  }
+
 
   .contact-form_info {
     height: 40px;
@@ -1189,6 +1218,18 @@ body {
     }
   }
 
+  .form-message {
+    height: 200px;
+    position: relative;
+    top: 100px;
+  }
+
+  .form-btn {
+    position: relative;
+    top: 80px;
+  }
+
+
 }//media < 900px
 
 @media all and (max-width: 540px){
@@ -1198,7 +1239,32 @@ body {
     top: 20px;
   }
 
+  .cover-slider {
+    .section-content-wrap {
+      .welcome {
+        top: -50px;
+      }
+    }
+  }
 
+  .down {
+    position: relative;
+    top: 10px;
+    left: 5%;
+  }
+
+  .downTop {
+    position: relative;
+    top: -30px;
+    left: 5%;
+  }
+
+
+  .menu-slide {
+    .text-box {
+      width: 60%;
+    }
+  }
 
   .section-content-wrap {
     width: 95%;
@@ -1213,34 +1279,6 @@ body {
 
   .photo-box {
     display: none;
-  }
-
-
-  .menu-title {
-    font-family: $handwriting-font-family;
-    font-size: 60px;
-    font-style: italic;
-    color: $red;
-    text-shadow: 0px 7px 3px $white, -7px 0 3px $white, 0 -7px 3px $white, 7px 0 3px $white;
-    width: 60%;
-    margin: 0;
-    margin-bottom: 20px;
-  }
-
-  .menu-description {
-    text-align: left;
-    color: rgba(0,0,0,.8);
-    font-size: 15px;
-    font-weight: 100;
-    background-color: rgba(255,255,255,.5);
-    width: 80%;
-    margin-left: 40px;
-    padding: 20px;
-  }
-
-  .price {
-    color: $white;
-    font-size: 35px;
   }
 
   .menu-btn {
@@ -1262,8 +1300,23 @@ body {
     }
   }
 
-  .text-box {
-    padding: 80px 0;
+  .menu-slide {
+    .section-content-wrap {
+      @include flexbox;
+      @include center_flex;
+      width: 70%;
+    }
+    .text-box {
+      @include flexbox;
+      @include center_flex;
+      flex-direction: column;
+      .menu-title {
+        font-size: 50px;
+      }
+      .description {
+        width: 40%;
+      }
+    }
   }
 
   .item-small {
