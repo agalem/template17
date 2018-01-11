@@ -176,7 +176,8 @@ body {
   color: #ed2024;
   text-shadow: 0px 7px 3px white, -7px 0 3px white, 0 -7px 3px white, 7px 0 3px white;
   position: relative;
-  top: -20px; }
+  top: -20px;
+  z-index: 10; }
 
 .welcome {
   font-family: "Fjalla One", sans-serif;
@@ -197,7 +198,8 @@ body {
   -moz-transition: left 1s;
   -ms-transition: left 1;
   -o-transition: left 1s;
-  transition: left 1s; }
+  transition: left 1s;
+  left: 0; }
 
 .slide-1 {
   background: url("../images/slide1.png") center center;
@@ -205,8 +207,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: top;
-  left: -100vw; }
+  background-position: top; }
 
 .slide-2 {
   background: url("../images/slide2.png") center center;
@@ -214,8 +215,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: top;
-  left: 0; }
+  background-position: top; }
 
 .slide-3 {
   background: url("../images/slide3.png") center center;
@@ -223,8 +223,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: top;
-  left: 100vw; }
+  background-position: top; }
 
 .arrow {
   border: solid rgba(255, 255, 255, 0.8);
@@ -406,7 +405,9 @@ body {
 
 .menu-slider {
   width: 100%;
-  background-color: black; }
+  background-color: black;
+  position: relative;
+  height: 600px; }
   .menu-slider .section-content-wrap {
     justify-content: center;
     align-items: center;
@@ -433,31 +434,36 @@ body {
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: absolute;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.5s;
+  /* Safari and Chrome */
+  -o-transition: all 0.5s;
+  /* Opera */ }
 
 .menu-slide-1 {
   background: url("../images/lemon-cake.png") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  display: none; }
+  background-size: cover; }
 
 .menu-slide-2 {
   background: url("../images/thanksgiving.png") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  display: flex; }
+  background-size: cover; }
 
 .menu-slide-3 {
   background: url("../images/coffee.png") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  display: none; }
+  background-size: cover; }
 
 .menu-title {
   font-family: "Norican", cursive;
@@ -474,6 +480,9 @@ body {
   color: white;
   font-size: 15px;
   font-weight: 100; }
+
+.menu-slide-2 .menu-description {
+  color: #ed2024; }
 
 .price {
   color: white;
@@ -1038,6 +1047,8 @@ body {
     position: static; } }
 
 @media all and (max-width: 900px) {
+  .cover-slider .section-content-wrap {
+    width: 60%; }
   .left {
     margin-left: 20px; }
   .right {
@@ -1071,7 +1082,8 @@ body {
   .header {
     height: 65px;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.95); }
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 11; }
   .site-logo {
     width: 50px; }
   .menu-list {
@@ -1102,6 +1114,17 @@ body {
       top: 25px; }
   .menu-list-li:last-child {
     padding-bottom: 30px; }
+  .menu-title {
+    font-size: 60px; }
+  .menu-description {
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    margin: 0;
+    padding: 20px; }
+  .price {
+    color: white;
+    font-size: 35px; }
   .contact-form_info {
     height: 40px;
     position: relative;
@@ -1128,38 +1151,36 @@ body {
       position: static;
       display: flex; }
       .contact-form_info .form-input:focus {
-        box-shadow: 1px 1px 5px white; } }
+        box-shadow: 1px 1px 5px white; }
+  .form-message {
+    height: 200px;
+    position: relative;
+    top: 100px; }
+  .form-btn {
+    position: relative;
+    top: 80px; } }
 
 @media all and (max-width: 540px) {
   .main-title {
     top: 20px; }
+  .cover-slider .section-content-wrap .welcome {
+    top: -50px; }
+  .down {
+    position: relative;
+    top: 10px;
+    left: 5%; }
+  .downTop {
+    position: relative;
+    top: -30px;
+    left: 5%; }
+  .menu-slide .text-box {
+    width: 60%; }
   .section-content-wrap {
     width: 95%; }
   .menu-btn:hover {
     color: #fff581; }
   .photo-box {
     display: none; }
-  .menu-title {
-    font-family: "Norican", cursive;
-    font-size: 60px;
-    font-style: italic;
-    color: #ed2024;
-    text-shadow: 0px 7px 3px white, -7px 0 3px white, 0 -7px 3px white, 7px 0 3px white;
-    width: 60%;
-    margin: 0;
-    margin-bottom: 20px; }
-  .menu-description {
-    text-align: left;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 15px;
-    font-weight: 100;
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 80%;
-    margin-left: 40px;
-    padding: 20px; }
-  .price {
-    color: white;
-    font-size: 35px; }
   .menu-btn {
     padding: 15px 25px;
     border: 1px solid white;
@@ -1176,8 +1197,26 @@ body {
       -o-transition: all 1s;
       transition: all 1s;
       background-color: #ed2024; }
-  .text-box {
-    padding: 80px 0; }
+  .menu-slide .section-content-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%; }
+  .menu-slide .text-box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .menu-slide .text-box .menu-title {
+      font-size: 50px; }
+    .menu-slide .text-box .description {
+      width: 40%; }
   .item-small {
     width: 100%; }
   .vertical-line {
