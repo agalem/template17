@@ -1,15 +1,12 @@
-var topSlideList = document.getElementsByClassName('slide');
-var nextBtn = document.getElementById('right-slide');
-var prevBtn = document.getElementById('left-slide');
+var coverSlides = document.getElementsByClassName('slide');
+var nextBtnCover = document.getElementById('right-slide');
+var prevBtnCover = document.getElementById('left-slide');
 
 var menuSlideList = document.getElementsByClassName('menu-slide');
-var menuNextBtn = document.getElementsByClassName('menu-goRight');
-var menuPrevBtn = document.getElementsByClassName('menu-goLeft');
 
-
-var prev = 0;
-var current = 1;
-var next = 2;
+var current = 2;
+var prev = 1;
+var next = 0;
 
 function ifNextExists() {
 
@@ -25,43 +22,81 @@ function ifNextExists() {
 
 function ifPrevExists() {
 
-    if(prev === -1){
+    if(prev < 0){
         prev = 2;
-    } else if(next === -1){
+    } else if(next < 0){
         next = 2;
-    } else if (current === -1){
+    } else if (current < 0){
         current = 2;
     }
 
 }
 
-function changeStyles() {
-    topSlideList[prev].style.zIndex = '1';
-    topSlideList[next].style.zIndex = '1';
-    topSlideList[current].style.zIndex = '5';
+function changeStylesNext() {
+    coverSlides[prev].style.zIndex = '3';
+    coverSlides[current].style.zIndex = '3';
+    coverSlides[next].style.zIndex = '-1';
 
-    topSlideList[prev].style.left = '-100vw';
-    topSlideList[current].style.left = '0';
-    topSlideList[next].style.left = '100vw';
+    coverSlides[next].style.left = '100vw';
+    coverSlides[prev].style.left = '-100vw';
+    coverSlides[current].style.left = '0';
 }
 
-function changeMenuStyles() {
-    menuSlideList[prev].style.display = 'none';
-    menuSlideList[current].style.display = 'flex';
-    menuSlideList[next].style.display = 'none';
+function changeStylesPrev() {
+    coverSlides[prev].style.zIndex = '-1';
+    coverSlides[current].style.zIndex = '3';
+    coverSlides[next].style.zIndex = '3';
+
+    coverSlides[next].style.left = '100vw';
+    coverSlides[prev].style.left = '-100vw';
+    coverSlides[current].style.left = '0';
 }
 
 
-function showNext() {
+function showNextCover() {
+    changeStylesNext();
 
     current++;
     prev++;
     next++;
 
     ifNextExists();
+}
 
-    changeStyles();
+function showPrevCover() {
 
+    current--;
+    prev--;
+    next--;
+
+    ifPrevExists();
+
+    changeStylesPrev();
+}
+
+showCoverNextInterval = setInterval(showNextCover, 6000);
+
+nextBtnCover.addEventListener('click', function () {
+    clearInterval(showCoverNextInterval);
+
+    showNextCover();
+    showCoverNextInterval = setInterval(showNextCover, 6000);
+});
+
+prevBtnCover.addEventListener('click', function () {
+    clearInterval(showCoverNextInterval);
+
+    showPrevCover();
+    showCoverNextInterval = setInterval(showNextCover, 6000);
+});
+
+
+/*             MENU SLIDER             */
+
+function changeMenuStyles() {
+    menuSlideList[prev].style.opacity = '0';
+    menuSlideList[next].style.opacity = '0';
+    menuSlideList[current].style.opacity = '1';
 }
 
 function menuShowNext() {
@@ -74,21 +109,7 @@ function menuShowNext() {
     changeMenuStyles();
 }
 
-
-function showPrev() {
-
-    current--;
-    prev--;
-    next--;
-
-    ifPrevExists();
-
-    changeStyles();
-
-}
-
 function menuShowPrev() {
-
     current--;
     prev--;
     next--;
@@ -96,34 +117,6 @@ function menuShowPrev() {
     ifPrevExists();
 
     changeMenuStyles();
-
 }
 
-coverInterval = window.setInterval(showNext, 10000);
-
-nextBtn.addEventListener('click', function () {
-    window.clearInterval(coverInterval);
-
-    showNext();
-    coverInterval = window.setInterval(showNext, 10000);
-});
-
-prevBtn.addEventListener('click', function () {
-    window.clearInterval(coverInterval);
-
-    showPrev();
-    coverInterval = window.setInterval(showNext, 10000);
-});
-
-
-for(var i=0; i<menuNextBtn.length; i++){
-    menuNextBtn[i].addEventListener('click', function () {
-        menuShowNext();
-    })
-}
-
-for(var i=0; i<menuPrevBtn.length; i++){
-    menuPrevBtn[i].addEventListener('click', function () {
-        menuShowPrev();
-    })
-}
+setInterval(menuShowNext, 10000);
