@@ -42,6 +42,7 @@ function changeStylesNext() {
     coverSlides[current].style.left = '0';
 }
 
+
 function changeStylesPrev() {
     coverSlides[prev].style.zIndex = '-1';
     coverSlides[current].style.zIndex = '3';
@@ -73,6 +74,7 @@ function showPrevCover() {
 
     changeStylesPrev();
 }
+
 
 showCoverNextInterval = setInterval(showNextCover, 6000);
 

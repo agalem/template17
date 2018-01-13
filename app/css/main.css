@@ -1162,16 +1162,16 @@ body {
 
 @media all and (max-width: 540px) {
   .main-title {
-    top: 20px; }
+    top: 100px; }
   .cover-slider .section-content-wrap .welcome {
     top: -50px; }
   .down {
     position: relative;
-    top: 10px;
+    top: -50px;
     left: 5%; }
   .downTop {
     position: relative;
-    top: -30px;
+    top: -60px;
     left: 5%; }
   .menu-slide .text-box {
     width: 60%; }
