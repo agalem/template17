@@ -3,6 +3,7 @@
 <head>
     <title>Top food &amp; drink</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.png">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.min.css">
@@ -37,10 +38,11 @@
             <i class="arrow down" id="go-down" onclick="document.querySelector('#reservation').scrollIntoView({ behavior: 'smooth' });"></i>
             <i class="arrow downTop" id="go-down2" onclick="document.querySelector('#reservation').scrollIntoView({ behavior: 'smooth' });"></i>
         </div>
-
-        <div class="slide slide-1"></div>
-        <div class="slide slide-2"></div>
-        <div class="slide slide-3"></div>
+        <div class="slider__container" id="slider__container">
+            <div class="slide slide-1"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+        </div>
     </section>
 
     <section class="reservation" id="reservation">
