@@ -1,12 +1,61 @@
-var coverSlides = document.getElementsByClassName('slide');
-var nextBtnCover = document.getElementById('right-slide');
-var prevBtnCover = document.getElementById('left-slide');
+var slider = document.getElementById('slider__container');
+var allImages = document.getElementsByClassName('slide');
+var arrowRight = document.getElementById('right-slide');
+var arrowLeft = document.getElementById('left-slide');
+
 
 var menuSlideList = document.getElementsByClassName('menu-slide');
 
 var current = 2;
 var prev = 1;
 var next = 0;
+
+
+var i = 0;
+
+function moveRight() {
+
+    i += 100;
+
+    if(i < allImages.length * 100) {
+        slider.style.left = '-' + i + '%';
+    } else {
+        i = 0;
+        slider.style.left = '0%';
+    }
+
+}
+
+
+function moveLeft() {
+
+    i -= 100;
+
+    if(i < 0) {
+        i = 200;
+        slider.style.left = '-200%';
+    } else {
+        slider.style.left = '-' + i + '%';
+    }
+
+}
+
+goNext = setInterval(moveRight, 5000);
+
+arrowRight.addEventListener('click', function () {
+    clearInterval(goNext);
+
+    moveRight();
+    goNext = setInterval(moveRight, 5000);
+});
+
+arrowLeft.addEventListener('click', function () {
+    clearInterval(goNext);
+
+    moveLeft();
+    goNext = setInterval(moveRight, 5000);
+});
+
 
 function ifNextExists() {
 
@@ -32,68 +81,6 @@ function ifPrevExists() {
 
 }
 
-function changeStylesNext() {
-    coverSlides[prev].style.zIndex = '3';
-    coverSlides[current].style.zIndex = '3';
-    coverSlides[next].style.zIndex = '-1';
-
-    coverSlides[next].style.left = '100vw';
-    coverSlides[prev].style.left = '-100vw';
-    coverSlides[current].style.left = '0';
-}
-
-
-function changeStylesPrev() {
-    coverSlides[prev].style.zIndex = '-1';
-    coverSlides[current].style.zIndex = '3';
-    coverSlides[next].style.zIndex = '3';
-
-    coverSlides[next].style.left = '100vw';
-    coverSlides[prev].style.left = '-100vw';
-    coverSlides[current].style.left = '0';
-}
-
-
-function showNextCover() {
-    changeStylesNext();
-
-    current++;
-    prev++;
-    next++;
-
-    ifNextExists();
-}
-
-function showPrevCover() {
-
-    current--;
-    prev--;
-    next--;
-
-    ifPrevExists();
-
-    changeStylesPrev();
-}
-
-
-showCoverNextInterval = setInterval(showNextCover, 6000);
-
-nextBtnCover.addEventListener('click', function () {
-    clearInterval(showCoverNextInterval);
-
-    showNextCover();
-    showCoverNextInterval = setInterval(showNextCover, 6000);
-});
-
-prevBtnCover.addEventListener('click', function () {
-    clearInterval(showCoverNextInterval);
-
-    showPrevCover();
-    showCoverNextInterval = setInterval(showNextCover, 6000);
-});
-
-
-/*             MENU SLIDER             */
 
 function changeMenuStyles() {
     menuSlideList[prev].style.opacity = '0';
