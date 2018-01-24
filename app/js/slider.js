@@ -6,7 +6,7 @@ var arrowLeft = document.getElementById('left-slide');
 var imgWidth;
 
 if(window.innerWidth >= 1440){
-    imgWidth = 1440;
+    imgWidth = window.innerWidth + 100;
 } else {
     imgWidth = window.innerWidth;
 }
@@ -31,7 +31,9 @@ var addEvent = function (object, type, callback) {
     }
 };
 
-addEvent(window, 'resize', function (e) {
+addEvent(window, 'resize', function () {
+    slider.style.left = '0px';
+    i=0;
 
     if(window.innerWidth >= 1440){
         imgWidth = 1440;
@@ -50,7 +52,7 @@ function moveRight() {
         slider.style.left = '-' + i + 'px';
     } else {
         i = 0;
-        slider.style.left = '0vw';
+        slider.style.left = '0px';
     }
 
 }
