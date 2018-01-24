@@ -2,8 +2,16 @@ var slider = document.getElementById('slider__container');
 var allImages = document.getElementsByClassName('slide');
 var arrowRight = document.getElementById('right-slide');
 var arrowLeft = document.getElementById('left-slide');
-var imgWidth = Math.ceil(100/allImages.length);
-var sliderWidth = allImages.length * 100;
+
+var imgWidth;
+
+if(window.innerWidth >= 1440){
+    imgWidth = 1440;
+} else {
+    imgWidth = window.innerWidth;
+}
+
+var i = 0;
 
 var menuSlideList = document.getElementsByClassName('menu-slide');
 
@@ -11,16 +19,35 @@ var current = 2;
 var prev = 1;
 var next = 0;
 
-slider.style.width = sliderWidth + 'vw';
 
-var i = imgWidth;
+var addEvent = function (object, type, callback) {
+    if(object == null || typeof(object) == 'undefined') return;
+    if(object.addEventListener) {
+        object.addEventListener(type, callback, false);
+    } else if (object.attachEvent) {
+        object.attachEvent('on' + type, callback);
+    } else {
+        object['on' + type] = callback;
+    }
+};
+
+addEvent(window, 'resize', function (e) {
+
+    if(window.innerWidth >= 1440){
+        imgWidth = 1440;
+    } else {
+        imgWidth = window.innerWidth;
+    }
+
+});
 
 function moveRight() {
 
-    i += 100;
+    i += imgWidth;
 
-    if(i < allImages.length * 100) {
-        slider.style.left = '-' + i + 'vw';
+
+    if(i < allImages.length * imgWidth) {
+        slider.style.left = '-' + i + 'px';
     } else {
         i = 0;
         slider.style.left = '0vw';
@@ -30,14 +57,16 @@ function moveRight() {
 
 function moveLeft() {
 
-    i -= 100;
+    i -= imgWidth;
 
-    if(i < 0) {
-        i = 200;
-        slider.style.left = '-200vw';
+
+    if(i < 0){
+        i = imgWidth * (allImages.length-1);
+        slider.style.left = '-'+i+'px';
     } else {
-        slider.style.left = '-' + i + 'vw';
+        slider.style.left = '-'+i+'px';
     }
+
 
 }
 
