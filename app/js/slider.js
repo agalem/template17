@@ -3,13 +3,7 @@ var allImages = document.getElementsByClassName('slide');
 var arrowRight = document.getElementById('right-slide');
 var arrowLeft = document.getElementById('left-slide');
 
-var imgWidth;
-
-if(window.innerWidth >= 1440){
-    imgWidth = window.innerWidth + 100;
-} else {
-    imgWidth = window.innerWidth;
-}
+var imgWidth = document.getElementById('first-slide').offsetWidth;
 
 var i = 0;
 
@@ -35,11 +29,7 @@ addEvent(window, 'resize', function () {
     slider.style.left = '0px';
     i=0;
 
-    if(window.innerWidth >= 1440){
-        imgWidth = 1440;
-    } else {
-        imgWidth = window.innerWidth;
-    }
+    imgWidth = document.getElementById('first-slide').offsetWidth;
 
 });
 
@@ -54,6 +44,8 @@ function moveRight() {
         i = 0;
         slider.style.left = '0px';
     }
+
+    console.log(document.getElementById('first-slide').offsetWidth);
 
 }
 
