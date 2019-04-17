@@ -4,7 +4,7 @@
 
 ## Live demo
 
-Project is hosted on Github Pages. https://github.com/agalem/template17
+Project is hosted on Github Pages. https://agalem.github.io/template17/
 
 ## Viewing locally
 
